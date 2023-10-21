@@ -1,1 +1,1 @@
-document.addEventListener("keydown",(function(e){"F12"==e.key&&(e.preventDefault(),window.location.href="https://nav.cent1pedee.top/")}));
+document.addEventListener("keydown",(function(e){("F12"==e.key||e.ctrlKey&&e.shiftKey&&"I"==e.key)&&(e.preventDefault(),window.location.href="https://nav.cent1pedee.top/")}));

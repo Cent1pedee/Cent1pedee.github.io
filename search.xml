@@ -131,25 +131,6 @@
     
     
     <entry>
-      <title>Todoist目标清单列表</title>
-      <link href="/posts/a8dff632.html"/>
-      <url>/posts/a8dff632.html</url>
-      
-        <content type="html"><![CDATA[<p>边敲博客边想要做的内容吧，就往下面塞了</p><div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2023</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-01</p></div></div><div class='timeline-item-content'><p>搭建博客</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-01</p></div></div><div class='timeline-item-content'><p>github部署博客</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-05</p></div></div><div class='timeline-item-content'><p>博客主页配置</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-10</p></div></div><div class='timeline-item-content'><p>Vercel加速hexo访问</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-10</p></div></div><div class='timeline-item-content'><p>配置twikoo评论系统</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-17</p></div></div><div class='timeline-item-content'><p>博客主页</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-17</p></div></div><div class='timeline-item-content'><p>萌ICP备~~</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-17</p></div></div><div class='timeline-item-content'><p>基于UptimeRobot接口制作Status检测</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-20</p></div></div><div class='timeline-item-content'><p>Hexo后端Qexo部署</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-22</p></div></div><div class='timeline-item-content'><p>假装图床有登录页</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-23</p></div></div><div class='timeline-item-content'><p>ChimeraGPT</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-23</p></div></div><div class='timeline-item-content'><p>ChatGPT+Midjourney</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-26</p></div></div><div class='timeline-item-content'><p>github profile美化</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-30</p></div></div><div class='timeline-item-content'><p>购买云服务器部署Docker，谢谢marcus大佬带带~~</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-30</p></div></div><div class='timeline-item-content'><p>个人云盘Alist部署</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-31</p></div></div><div class='timeline-item-content'><p>起始页部署</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>09-05</p></div></div><div class='timeline-item-content'><p>更新Anzhiyu主题 1.5.3 -&gt; 1.6.5</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>09-14</p></div></div><div class='timeline-item-content'><p>WordPress部署完毕</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>09-20</p></div></div><div class='timeline-item-content'><p>摸摸石头姐的游戏人生</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>09-24</p></div></div><div class='timeline-item-content'><p>第一次更新友链啦！</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>09-30</p></div></div><div class='timeline-item-content'><p>添加必应站长工具!</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-06</p></div></div><div class='timeline-item-content'><p>添加侧边栏欢迎信息!</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-20</p></div></div><div class='timeline-item-content'><p>改背景为一图流，更换壁纸，调整darkmode</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-21</p></div></div><div class='timeline-item-content'><p>Todolist!</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-22</p></div></div><div class='timeline-item-content'><p>添加游戏人生</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-23</p></div></div><div class='timeline-item-content'><p>大量改动Footer部分，统一管理css、js文件</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-01</p></div></div><div class='timeline-item-content'><p>添加51la</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-03</p></div></div><div class='timeline-item-content'><p>完成anzhiyu主题一图流魔改</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-06</p></div></div><div class='timeline-item-content'><p>侧边栏新添旋转小人</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-07</p></div></div><div class='timeline-item-content'><p>魔改Loading加载页面</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-10</p></div></div><div class='timeline-item-content'><p>博客页面添加平滑效果</p></div></div></div>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 任务清单 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>垃圾代码书写准则</title>
       <link href="/posts/4e8dad09.html"/>
       <url>/posts/4e8dad09.html</url>
@@ -318,9 +299,9 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> Hello World! </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
       

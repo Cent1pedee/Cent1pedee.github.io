@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>Hexo美化：个性化鼠标指针样式</title>
+      <link href="/posts/c57f6a8e.html"/>
+      <url>/posts/c57f6a8e.html</url>
+      
+        <content type="html"><![CDATA[<div class="note blue anzhiyufont anzhiyu-icon-bullhorn disabled"><p>该方法通过外部引入，无需修改主题源文件</p></div><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当我们使用电脑进行日常操作时，鼠标指针是我们与计算机界面直接交互的关键元素之一。然而，在大多数情况下，我们使用的鼠标指针样式都是统一的，这往往会导致视觉疲劳和操作困难。因此，个性化鼠标指针样式的重要性愈发凸显。定制化的鼠标指针不仅可以提升用户体验，也能够在繁忙的工作中带来更高的效率和愉悦感。随着个性化需求的不断增长，个性化鼠标指针样式已经成为了提升用户体验的重要途径之一。</p><p>文以本站使用的主题 <code>anzhiyu</code> 为例，我将用最易操作的方式更改本站鼠标指针样式。</p><h1 id="样式预览"><a href="#样式预览" class="headerlink" title="样式预览"></a>样式预览</h1><details class="folding-tag" cyan open><summary> 鼠标指针样式预览 </summary>              <div class='content'>              <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071208706.cur"></p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071205091.cur"></p>              </div>            </details><h1 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h1><ul><li>在<code>themes/anzhiyu/source/_layout/</code>里，新建文件cursor.styl，内容如下</li></ul><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071208706.cur), auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line"><span class="attribute">cursor</span>: <span class="built_in">url</span>(https://cdn.jsdelivr.net/gh/kaix2301/pictures/img202201071205091.cur), auto<span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h1><p>到这时候，如果你的文件路径正确，可以执行Hexo的三连命令来查看效果了！</p><ul><li>部分教程链接：<div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://kainote.top/2022/01/07/hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E9%BC%A0%E6%A0%87%E6%8C%87%E9%92%88%E6%A0%B7%E5%BC%8F/">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">hexo自定义鼠标指针样式</div>            <div class="tag-link-sitename">kai</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 美化 </tag>
+            
+            <tag> 指针 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo美化：个性化主题加载页设计方案</title>
       <link href="/posts/576038b4.html"/>
       <url>/posts/576038b4.html</url>
@@ -17,6 +40,8 @@
             <tag> Hexo </tag>
             
             <tag> 美化 </tag>
+            
+            <tag> 加载页 </tag>
             
         </tags>
       
@@ -38,6 +63,8 @@
             <tag> Hexo </tag>
             
             <tag> 美化 </tag>
+            
+            <tag> 背景 </tag>
             
         </tags>
       

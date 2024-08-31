@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>Hexo零成本方案：搭建Umami统计工具</title>
+      <link href="/posts/9374da7d.html"/>
+      <url>/posts/9374da7d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>从早前的 LNMP 、OneinStack 到 XZ Utils ，再到现在的 Staticfile 、BootCDN ；供应链攻击总是让人猝不及防。七月中旬，糖果屋群突然就传来了51La被投毒的消息，而这也是我决定使用Umami的前提因素。但秉持着白嫖至上原则，因此写下了这篇文章。</p><p>本文以本站使用的主题 <code>anzhiyu</code> 为例，结合以下教程，手把手从零教你开始搭建Umami。</p><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://zhuanlan.zhihu.com/p/639179454">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">零成本自建一个统计网站</div>            <div class="tag-link-sitename">蔡任弘</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://zexwoo.blog/posts/tutorials/build-umami/">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">如何不花一分钱搭建 Umami 统计工具</div>            <div class="tag-link-sitename">ZexWoo's Blog</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><h1 id="什么是Umami？"><a href="#什么是Umami？" class="headerlink" title="什么是Umami？"></a>什么是Umami？</h1><p><strong>Umami</strong> 是一个开源的网站访问统计工具，它可以作为<strong>Google Analytics</strong>的替代品。<strong>Umami</strong>专注于隐私保护，提供简洁直观的用户界面，并且允许用户自托管，这意味着你可以将数据保存在自己的服务器上，从而更好地控制数据安全和隐私。</p><h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><h2 id="1、创建数据库"><a href="#1、创建数据库" class="headerlink" title="1、创建数据库"></a>1、创建数据库</h2><p>首先在 <a href="https://supabase.com/">Supabase</a>创建一个数据库。</p><details class="folding-tag" cyan open><summary> Supabase </summary>              <div class='content'>              <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.kouseki.cn/file/071d4a22159e6f6d7e891.png" alt="png"></p>              </div>            </details><ul><li>创建步骤略过，请自行操作</li></ul><p>之后进入到创建项目的页面，按照相关的要求填写，名字、数据库密码后续需要使用。点击下面的 Generate a password 将生成的密码复制下来保存。</p><p>待项目创建完毕，点击项目管理，点击数据库，找到 <code>Connection string</code> 中的URL栏目，复制内容，将 <code>[YOUR-PASSWORD]</code> 替换成前面所生成的密码，将括号去掉，就生成了一个新的链接。</p><details class="folding-tag" cyan open><summary> Supabase </summary>              <div class='content'>              <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.kouseki.cn/file/7ef6c44320528364a54a8.png" alt="png"></p>              </div>            </details><ul><li>至此，您已经完成了该平台的操作。</li></ul><h2 id="2、Vercel部署Umami"><a href="#2、Vercel部署Umami" class="headerlink" title="2、Vercel部署Umami"></a>2、Vercel部署Umami</h2><p>从github上Fork <a href="https://github.com/umami-software/umami">umami-softwareumami</a> 并import到Vercel中。</p><p>环境配置分别添加 <code>DATABASE_URL</code> 和 <code>HASH_SALT</code>。前者是上一步在Supabase复制的 URL，记得替换自己的 Password，并且在最后加上 <code>?pgbouncer=true</code> ；后者需要自己随意生成一长串字符串，最后点击 Deploy。</p><ul><li>绑定完域名后即可访问您的统计网站。</li></ul><h2 id="3、使用Umami"><a href="#3、使用Umami" class="headerlink" title="3、使用Umami"></a>3、使用Umami</h2><p>通过上面的操作步骤基本上就创建好一个属于自己的统计网站，通过绑定的域名进入网站。默认的用户名和密码分别是<code>admin</code>和<code>Umami</code>。(建议先行更改用户名及密码)</p><details class="folding-tag" cyan open><summary> Umami </summary>              <div class='content'>              <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://pic4.zhimg.com/80/v2-b94f07f48b4c0051371ec2b319016eed_720w.webp" alt="webg"></p>              </div>            </details><ul><li>添加之后点击编辑，点击跟踪代码，复制这串代码，并将这段代码添加到您的网站中，这里演示的是 <code>anzhiyu</code> 主题，请根据自己的主题进行修改。</li></ul><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># 自定义css</span></span><br><span class="line">    <span class="comment"># - &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom.css&quot; media=&quot;defer&quot; onload=&quot;this.media=&#x27;all&#x27;&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;XXXXXXX&quot;</span> <span class="string">data-website-id=&quot;XXX&quot;&gt;&lt;/script&gt;</span> <span class="comment"># Umami访问统计</span></span><br></pre></td></tr></table></figure><h2 id="4、大功告成"><a href="#4、大功告成" class="headerlink" title="4、大功告成"></a>4、大功告成</h2><p>到这时候已经安装完毕，您可以通过自行搭建的统计网站查看网站的数据。</p><p>同时，您也可以通过Umami的共享链接进行分享</p><details class="folding-tag" cyan open><summary> Umami </summary>              <div class='content'>              <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://imgbed.kouseki.cn/file/5152e97c86ab1e27814d8.png" alt="png"></p>              </div>            </details><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://umami.cent1pedee.top/share/Rpntkz885tx7emUz/blog.cent1pedee.top">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">Umami共享</div>            <div class="tag-link-sitename">煮雪话河山</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Umami </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo美化：个性化鼠标指针样式</title>
       <link href="/posts/c57f6a8e.html"/>
       <url>/posts/c57f6a8e.html</url>
@@ -118,11 +141,11 @@
       
         <tags>
             
+            <tag> 教程 </tag>
+            
             <tag> Docker </tag>
             
             <tag> AList </tag>
-            
-            <tag> 教程 </tag>
             
         </tags>
       
@@ -147,9 +170,9 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> 教程 </tag>
+            
+            <tag> Docker </tag>
             
         </tags>
       

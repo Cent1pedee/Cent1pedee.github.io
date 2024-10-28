@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>Hexo美化：本站日志创建及配置</title>
+      <link href="/posts/bda0f2db.html"/>
+      <url>/posts/bda0f2db.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在鱼塘水群，有些萌萌哒新人问到了怎么实现<strong>本站日志</strong>这个功能。<strong>本站日志</strong>的目的正是为了记录我在学习和开发过程中所做的每一项尝试与成就。这不仅是对自己努力的见证，也是希望能为其他开发者提供灵感和参考。通过这份日志，我希望能与大家共同探讨、学习与进步。</p><p>本文以本站使用的主题 <code>anzhiyu</code> 主题为例，介绍如何为主题添加<strong>本站日志</strong>，当然目前是处于一个及其简陋的版本，很多地方或许达不到各位的审美标准，请各位大佬多多包容。</p><h1 id="样式预览"><a href="#样式预览" class="headerlink" title="样式预览"></a>样式预览</h1><details class="folding-tag" cyan open><summary> 本站日志预览 </summary>              <div class='content'>              <p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.cent1pedee.top/img/build.png"></p>              </div>            </details><h1 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h1><h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1. 配置文件"></a>1. 配置文件</h2><ul><li>在 <code>_config.anzhiyu.yml</code> 下的 <code>menu:</code> 添加 <code>本站日志: /update/ || xxx</code> , xxx 为你所想添加的图标，也可去掉。</li></ul><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">关于:</span></span><br><span class="line">  <span class="string">关于本人:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">anzhiyu-icon-paper-plane</span></span><br><span class="line">  <span class="string">闲言碎语:</span> <span class="string">/essay/</span> <span class="string">||</span> <span class="string">anzhiyu-icon-lightbulb</span></span><br><span class="line">  <span class="string">本站日志:</span> <span class="string">/update/</span> <span class="string">||</span> <span class="string">xxx</span></span><br></pre></td></tr></table></figure><h2 id="2-Pug-文件修改"><a href="#2-Pug-文件修改" class="headerlink" title="2. Pug 文件修改"></a>2. Pug 文件修改</h2><ul><li>在 <code>themes/anzhiyu/layout/page.pug</code> 中添加以下内容</li></ul><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">when &#x27;update&#x27;</span><br><span class="line">  include includes/page/update.pug</span><br></pre></td></tr></table></figure><div class="note info modern"><p>注意，Pug 文件的缩进十分严格，在 Pug 中，缩进用于表示层级结构。</p></div><h2 id="3-添加-update-pug-文件"><a href="#3-添加-update-pug-文件" class="headerlink" title="3. 添加 update.pug 文件"></a>3. 添加 update.pug 文件</h2><ul><li>在 <code>themes/anzhiyu/layout/includes/page</code>下新建<code>update.pug</code>文件，并添加以下内容：</li></ul><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#update</span><br><span class="line">  if site.data.update</span><br><span class="line">    each i in site.data.update</span><br><span class="line">      .author-content.author-content-item.UpdatePage.single(style = `background: url($&#123;i.top_background&#125;) left 37% / cover no-repeat !important;`)</span><br><span class="line">        .card-content</span><br><span class="line">          .author-content-item-tips=i.class_name</span><br><span class="line">          span.author-content-item-title=i.description</span><br><span class="line">          .content-bottom</span><br><span class="line">            .tips=i.tip</span><br><span class="line">          .banner-button-group</span><br><span class="line">            a.banner-button(href=i.buttonLink)</span><br><span class="line">              i.anzhiyufont.anzhiyu-icon-arrow-circle-right(style=&#x27;font-size: 1.3rem&#x27;)</span><br><span class="line">              span.banner-button-text=i.buttonText</span><br><span class="line"></span><br><span class="line">  #article-container</span><br><span class="line">    != page.content</span><br></pre></td></tr></table></figure><div class="note info modern"><p>注意，Pug 文件的缩进十分严格，在 Pug 中，缩进用于表示层级结构。</p></div><h2 id="4-添加-update-yml-文件"><a href="#4-添加-update-yml-文件" class="headerlink" title="4. 添加 update.yml 文件"></a>4. 添加 update.yml 文件</h2><ul><li>在 <code>source/_data</code> 下新建 <code>update.yml</code> 文件，并添加以下内容：</li></ul><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">top_background:</span> <span class="string">&quot;https://xxxxxx.png&quot;</span></span><br><span class="line"><span class="attr">class_name:</span> <span class="string">&quot;Update Class 1&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;Description of the first update&quot;</span></span><br><span class="line"><span class="attr">tip:</span> <span class="string">&quot;Tip for the first update&quot;</span></span><br><span class="line"><span class="attr">buttonLink:</span> <span class="string">&quot;http://link_to_update1.com&quot;</span></span><br><span class="line"><span class="attr">buttonText:</span> <span class="string">&quot;More&quot;</span></span><br></pre></td></tr></table></figure><div class="note info modern"><p><strong>top_background</strong> 请自行替换为自己所喜欢的壁纸。</p></div><h2 id="5-新建-Update-页面"><a href="#5-新建-Update-页面" class="headerlink" title="5. 新建 Update 页面"></a>5. 新建 Update 页面</h2><p>使用 <code>Hexo new page update</code> 命令新建页面，并在 <code>Front-matter</code> 中添加 <code>type: update</code>。</p><h2 id="6-大功告成"><a href="#6-大功告成" class="headerlink" title="6. 大功告成"></a>6. 大功告成</h2><p>此时你已经完成了 <strong>本站日志</strong> 的创建，页面支持 Markdown 格式，同时也支持 <code>anzhiyu</code> 主题下的外挂标签。你可以通过顶部的关于下的本站日志浏览完成后的效果，也可以通过下面的外挂链接浏览。</p><div calss='anzhiyu-tag-link'><a class="tag-Link" target="_blank" href="https://blog.cent1pedee.top/update/">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">本站日志</div>            <div class="tag-link-sitename">煮雪话河山</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 美化 </tag>
+            
+            <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo零成本方案：搭建Umami统计工具</title>
       <link href="/posts/9374da7d.html"/>
       <url>/posts/9374da7d.html</url>
@@ -277,31 +300,6 @@
             <tag> 数据分析 </tag>
             
             <tag> 数据清洗 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>《煮雪》 - 林清玄</title>
-      <link href="/posts/b80166a2.html"/>
-      <url>/posts/b80166a2.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="《煮雪》-林清玄散文"><a href="#《煮雪》-林清玄散文" class="headerlink" title="《煮雪》 - 林清玄散文"></a>《煮雪》 - 林清玄散文</h1><h2 id="大体概括"><a href="#大体概括" class="headerlink" title="大体概括"></a>大体概括</h2><p>  出自作家林清玄的一篇散文《煮雪》。《煮雪》讲了作者想象的一个多情而极度浪漫的传说，传说北极天寒地冻，一开口说话就凝成冰雪，对方听不见，只好回家慢慢烤来听。什么样的话，用什么样的火，什么样的方式，“如果失恋，等不到冰雪尽融的时刻，就放一把火，把雪都烧了，烧成另一个春天”。有的时候，人要学会放下，放下失意与悲痛，重新开始一段崭新的生活。此时此刻，我的心得到了温煮，“心雪”的香早已弥漫整个天空，泛滥到使人微醉。</p><p><a href="https://baike.baidu.com/item/%E7%85%AE%E9%9B%AA/20382942">百度百科</a></p><hr><h2 id="作品原文"><a href="#作品原文" class="headerlink" title="作品原文"></a>作品原文</h2><blockquote><p>  传说在北极的人因为天寒地冻，一开口说话就结成冰雪，对方听不见，只好回家慢慢地烤来听……</p><p>  这是个极度浪漫的传说，想是多情的南方人编出来的。</p><p>  可是，我们假设说话结冰是真有其事，也是颇有困难，试想：回家烤雪煮雪的时候要用什么火呢？因为人的言谈是有情绪的，煮得太慢或太快都不足以表达说话的情绪。</p><p>  如果我生在北极，可能要为煮的问题烦恼半天，与性急的人交谈，回家要用大火煮烤；与性温的人交谈，回家要用文火。倘若与人吵架呢？回家一定要生个烈火，才能声闻当时哔哔剥剥的火暴声。</p><p>  遇到谈情说爱的时候，回家就要仔细酿造当时的气氛，先用情诗情词裁冰，把它切成细细的碎片，加上一点酒来煮，那么，煮出来的话便能使人微醉。倘若情浓，则不可以用炉火，要用烛火再加一杯咖啡，才不会醉得太厉害，还能维持一丝清醒。</p><p>  遇到不喜欢的人不喜欢的话就好办了，把结成的冰随意弃置就可以了。爱听的话则可以煮一半，留一半他日细细品味，住在北极的人真是太幸福了。</p><p>  但是幸福也不长驻，有时天气太冷，火生不起来，是让人着急的，只好拿着冰雪用手慢慢让它溶化，边溶边听。遇到性急的人恐怕要用雪往墙上摔，摔得力小时听不见，摔得用力则声震物瓦，造成噪音。我向往北极说话的浪漫世界，那是个宁静祥和又能自己制造生活的世界，在我们这个到处都是噪音的时代里，有时我会希望大家说出来的话都结成冰雪，回家如何处理是自家的事，谁也管不着。尤其是人多要开些无聊的会议时，可以把那块嘈杂的大雪球扔在自家前的阴沟里，让它永远见不到天日。</p><p>  斯时斯地，煮雪恐怕要变成一种学问，生命经验丰富的人可以根据雪的大小、成色，专门帮人煮雪为生；因为要煮得恰倒好处和说话时恰如其分一样，确实不易。年轻的恋人们则可以去借别人的“情雪”，借别人的雪来浇自己心中的块垒。</p><p>  如果失恋，等不到冰雪尽溶的时候，就放一把火把雪都烧了，烧成另一个春天。</p></blockquote><hr><h3 id="风雪一席茶，煮雪等春来"><a href="#风雪一席茶，煮雪等春来" class="headerlink" title="风雪一席茶，煮雪等春来"></a>风雪一席茶，煮雪等春来</h3><p>  如何度过寒冬暗夜，中国人自有一套时间的哲学。</p><p>  冬日飞雪覆千里，时间也拉得无比漫长。面对冰寒，古人披蓑衣，戴斗笠，踏入茫茫大雪，集雪瓮中，呼朋引伴，围炉煮雪烹茶。他们心怀欢悦，等待雪化，等待希望，等待热茶足够抵御刺骨之寒，也等待时间在柴火噼啪声中流逝。</p><p>  天际中飘飘洒洒的雪花簌簌落地，墙角的红梅幽幽怡香飘入屋中，合着屋里的暖气，烟云弥漫，一把木勺舀起枝头皑雪，放入玲珑剔透的水晶钵中。雪入壶中，在炉间温煮，待沸后浇到碗里，顺时茶香满屋。</p><p>  出汤杯中细品，琥珀玉光，那茶不似茶，那雪不似雪，那仿佛是天地孕育的日月精华、碧玉琼浆。雪融化后的微甜，并未夺走茶的茗香，似为它注入了一道新的韵味，香中带甜，甜中又夹着茶香，浑然一体，相辅相成。</p><p>  白居易被贬江洲，孤身一人，那年冬天初雪，他提笔给故友写了一封信：“晚来天欲雪，能饮一杯无？”温上一壶初雪以下酒，点上烛火以待故友来，昏昏灯火话平生，大笑一夜直到天明。任凭室外寒风带雪，屋里却把雪煮成暖意。</p><p>  雪液清甘涨井泉，自携茶灶就烹煎，雪冰清玉洁，喻示着人的心性高洁，茶浮浮沉沉，清清淡淡，瀹雪茶味，让人沉思。如此的雅致、率真和不染尘埃。</p><p>  冬越发萧瑟，但幸运的是，冬天也是团圆的季节，从冬至开始，人们就等着团圆。等腊八，等小年，一点点等到春节。刘长卿写道：“日暮苍山远，天寒白屋贫。柴门闻犬吠，风雪夜归人”，无数盏人间灯火，都在等那个风雪夜归人。</p><p>  此时的雪宜烤。烤雪有种烟火之气，当大雪在地面上覆了厚厚的一层，家人围着饭桌，桌边烤着火，母亲盛上一碗热腾腾的饺子，只待你归来，桌满人齐，才是冬天最暖和的事情。</p><p>  冬至此，雪会渐渐消，梅花越开越盛。王安石说：“墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来”。那缕梅香成了冬天最后的喜乐，人们踏雪寻梅香，煮雪等春来。</p><p>  在大雪里设一席茶，围炉煮雪烹茶。把今年所有的不快，都丢进炉火里燃尽；将所有的喜乐，和着腊梅之雪，煮成一壶茶，煮成明年的希望，煮成寒冬暖意，煮成下一个春天。</p><p>  等待着雪化，等待着暗夜露出曙光，枯枝长出新芽，春天如期而至。倘若等不到冰雪尽溶，就如林清玄所说：放一把火把雪都烧了，烧成另一个春天。</p><p>  风雪一席茶，冷热几韶华。</p><p>  或许今日我们已不煮雪，但在冬寒之中，仍可品咂人间温暖，等风雪停息，忍到春来花开。怀揣着希望，坚信这个冬天一定也可以逾越。世间万事，时间定会给我们一个满意的答复。    </p><p>（文源自网络，版权归原作者所有）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 文章推荐 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 散文 </tag>
             
         </tags>
       
